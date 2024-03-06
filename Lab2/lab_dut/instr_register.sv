@@ -16,7 +16,8 @@ import instr_register_pkg::*;  // user-defined types are defined in instr_regist
  input  opcode_t       opcode,
  input  address_t      write_pointer,
  input  address_t      read_pointer,
- output instruction_t  instruction_word // doar la semnale de output putem sa asignam valori
+ output instruction_t  instruction_word, // doar la semnale de output putem sa asignam valori
+ output rezultat       rez
 );
   timeunit 1ns/1ns;
 
@@ -29,7 +30,13 @@ import instr_register_pkg::*;  // user-defined types are defined in instr_regist
         iw_reg[i] = '{opc:ZERO,default:0};  // reset to all zeros // punem opcode-ul zero , default-> a si b o sa fie tot 0
     end
     else if (load_en) begin // daca load_en este 1 adica putem incarca date (deci cand avem un semnal):
-      iw_reg[write_pointer] = '{opcode,operand_a,operand_b}; // esantionam a, b si opcode, adica punem in array de -> write_pointer[31:0](asta fiind adresa) 
+      instruction_t rez_instr;
+      rez_instr.opc = opcode;
+      rez_instr.op_a = operand_a;
+      rez_instr.op_b = operand_b;
+      rez_instr.rez = calcul_rezultat(opcode, operand_a, operand_b);
+      
+      iw_reg[write_pointer] = rez_instr; // esantionam a, b si opcode, adica punem in array de -> write_pointer[31:0](asta fiind adresa) 
     end
 
   // read from the register
@@ -41,5 +48,18 @@ initial begin
   force operand_b = operand_a; // cause wrong value to be loaded into operand_b
 end
 `endif
+
+function rezultat calcul_rezultat(opcode_t opcode, operand_t op_a, operand_t op_b);
+    case (opcode)
+    ZERO: calcul_rezultat = 0;
+    PASSA: calcul_rezultat = op_a;
+    PASSB: calcul_rezultat = op_b;
+    ADD: calcul_rezultat = op_a + op_b;
+    SUB: calcul_rezultat = op_a - op_b;
+    MULT: calcul_rezultat = op_a * op_b;
+    DIV: calcul_rezultat = op_a / op_b;
+    MOD: calcul_rezultat = op_a % op_b;
+    endcase
+endfunction: calcul_rezultat
 
 endmodule: instr_register
