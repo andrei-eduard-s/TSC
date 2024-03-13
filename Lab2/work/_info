@@ -1,0 +1,133 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2
+vinstr_register
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 DXx4 work 18 instr_register_pkg 0 22 7PbEAb3^KlbAGVBC35z1I0
+!s110 1710313411
+!i10b 1
+!s100 dH;^Ij@7k<f:2zX[6LzoB2
+IXVzPLWFNk;bX;g3_jKNfh0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 instr_register_sv_unit
+S1
+R0
+w1709667770
+8D:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab_dut/instr_register.sv
+FD:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab_dut/instr_register.sv
+L0 9
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1710313411.000000
+!s107 D:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab_dut/instr_register.sv|
+!s90 -reportprogress|300|-work|work|D:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab_dut/instr_register.sv|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+Xinstr_register_pkg
+R1
+!s110 1710313412
+!i10b 1
+!s100 RD5NU4FZhi^5fC7NejWH@2
+I7PbEAb3^KlbAGVBC35z1I0
+V7PbEAb3^KlbAGVBC35z1I0
+S1
+R0
+w1709667284
+8D:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab_dut/instr_register_pkg.sv
+FD:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab_dut/instr_register_pkg.sv
+L0 5
+R4
+r1
+!s85 0
+31
+!s108 1710313412.000000
+!s107 D:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab_dut/instr_register_pkg.sv|
+!s90 -reportprogress|300|-work|work|D:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab_dut/instr_register_pkg.sv|
+!i113 1
+R5
+R6
+vinstr_register_test
+R1
+R2
+!s110 1710315360
+!i10b 1
+!s100 OGnbQih8:6UB<BX6]3=Ql0
+I@Y88D<D[O3G;7]b9gA@gD0
+R3
+!s105 instr_register_test_sv_unit
+S1
+R0
+w1710315342
+8D:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab01_testbench-interface/instr_register_test.sv
+FD:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab01_testbench-interface/instr_register_test.sv
+L0 8
+R4
+r1
+!s85 0
+31
+!s108 1710315360.000000
+!s107 D:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab01_testbench-interface/instr_register_test.sv|
+!s90 -reportprogress|300|-work|work|D:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab01_testbench-interface/instr_register_test.sv|
+!i113 1
+R5
+R6
+Ytb_ifc
+R1
+R2
+!s110 1710313415
+!i10b 1
+!s100 9W>AVcHhBXii<Bfl@Xo5O2
+IGYNJGaXPEK0HBIo8BBDBA2
+R3
+!s105 tb_ifc_sv_unit
+S1
+R0
+w1614777422
+8D:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab01_testbench-interface/tb_ifc.sv
+FD:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab01_testbench-interface/tb_ifc.sv
+L0 5
+R4
+r1
+!s85 0
+31
+!s108 1710313415.000000
+!s107 D:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab01_testbench-interface/tb_ifc.sv|
+!s90 -reportprogress|300|-work|work|D:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab01_testbench-interface/tb_ifc.sv|
+!i113 1
+R5
+R6
+vtop
+R1
+R2
+!s110 1710313416
+!i10b 1
+!s100 mEeBKPcY>_jRMYi`9`dGC1
+I9<Xdd`D3XEiJ70`KFS6CE3
+R3
+!s105 top_sv_unit
+S1
+R0
+w1709667439
+8D:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab01_testbench-interface/top.sv
+FD:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab01_testbench-interface/top.sv
+L0 5
+R4
+r1
+!s85 0
+31
+!s108 1710313416.000000
+!s107 D:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab01_testbench-interface/top.sv|
+!s90 -reportprogress|300|-work|work|D:/Facultate/Anul IV IESC/Semestrul 2/TSC/L2/TSC/Lab2/lab01_testbench-interface/top.sv|
+!i113 1
+R5
+R6

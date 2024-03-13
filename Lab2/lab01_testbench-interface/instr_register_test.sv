@@ -20,18 +20,17 @@ module instr_register_test
 
   timeunit 1ns/1ns;
   
-  parameter WR_NR = 20;
-  parameter RD_NR = 19; // 19 deoarece for-ul va porni de la valoarea 0
-
+  parameter WR_NR = 3;
+  parameter RD_NR = 2; // ( WR_NR - 1 ) deoarece for-ul va porni de la valoarea 0
+  parameter read_order = 2; // 0 - incremental; 1 - random; 2 - decremental;
+  parameter write_order = 2; // 0 - incremental; 1 - random; 2 - decremental;
   instruction_t  iw_reg_test [0:31];
 
   int seed = 555;
 
   initial begin
     $display("\n\n***********************************************************");
-    $display(    "***  THIS IS NOT A SELF-CHECKING TESTBENCH (YET).  YOU  ***");
-    $display(    "***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***");
-    $display(    "***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***");
+    $display(    "***         THIS IS A SELF-CHECKING TESTBENCH.          ***");
     $display(    "***********************************************************");
 
     $display("\nReseting the instruction register...");
@@ -51,27 +50,44 @@ module instr_register_test
     end
     @(posedge clk) load_en = 1'b0;  // turn-off writing to register
 
+              // Tema L4: De adaugat o variabila globala care verifica numarul erorilor (0 erori = test passed)
     // read back and display same three register locations
     $display("\nReading back the same register locations written...");
-    for (int i=0; i<=RD_NR; i++) begin
-      // later labs will replace this loop with iterating through a
-      // scoreboard to determine which addresses were written and
-      // the expected values to be read back
-      @(posedge clk) read_pointer = i;
-      @(negedge clk) print_results;
-      check_result();
+    if (read_order == 0) begin // - incremental
+      for (int i=0; i<=RD_NR; i++) begin
+        // later labs will replace this loop with iterating through a
+        // scoreboard to determine which addresses were written and
+        // the expected values to be read back
+        @(posedge clk) read_pointer = i%32;
+        @(negedge clk) print_results;
+        check_result();
+      end
+    end
+
+    if (read_order == 1) begin // - random
+      for (int i=0; i<=RD_NR; i++) begin
+        @(posedge clk) read_pointer = $random%32;
+        @(negedge clk) print_results;
+        check_result();
+      end
+    end
+
+    if (read_order == 2) begin // - decremental
+      for (int i=0; i<=RD_NR; i++) begin
+        @(posedge clk) read_pointer = 31-(i%32);
+        @(negedge clk) print_results;
+        check_result();
+      end
     end
 
     @(posedge clk) ;
-    $display("\n***********************************************************");
-    $display(  "***  THIS IS NOT A SELF-CHECKING TESTBENCH (YET).  YOU  ***");
-    $display(  "***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***");
-    $display(  "***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***");
-    $display(  "***********************************************************\n");
+    $display("\n\n***********************************************************");
+    $display(    "***         THIS IS A SELF-CHECKING TESTBENCH.          ***");
+    $display(    "***********************************************************");
     $finish;
   end
 
-  function void randomize_transaction;
+  function void randomize_transaction; // daca vrem sa nu fie o ordine incrementala folosim: write_pointer = $unsigned($random)%32; pt. random
     // A later lab will replace this function with SystemVerilog
     // constrained random values
     //
@@ -79,13 +95,33 @@ module instr_register_test
     // addresses of 0, 1 and 2.  This will be replaceed with randomizeed
     // write_pointer values in a later lab
     //
+    if(write_order == 0) begin
     static int temp = 0;
-    operand_a     <= $random(seed)%16;                 // between -15 and 15
-    operand_b     <= $unsigned($random)%16;            // between 0 and 15
-    opcode        <= opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
-    write_pointer <= temp++;
-    iw_reg_test[write_pointer] <= '{opcode, operand_a, operand_b, 64'b0}; // concatenam valorile in iw_reg_test
+      operand_a     = $random(seed)%16;                 // between -15 and 15
+      operand_b     = $unsigned($random)%16;            // between 0 and 15
+      opcode        = opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
+      write_pointer = temp++; // - incremental
+    end
+
+    if(write_order == 1) begin
+      operand_a     = $random(seed)%16;                 // between -15 and 15
+      operand_b     = $unsigned($random)%16;            // between 0 and 15
+      opcode        = opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
+      write_pointer = $unsigned($random)%32; // - random
+    end
+
+    if(write_order == 2) begin
+    static int temp = 31;
+      operand_a     = $random(seed)%16;                 // between -15 and 15
+      operand_b     = $unsigned($random)%16;            // between 0 and 15
+      opcode        = opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
+      write_pointer = temp--; // - decremental
+    end
+    
+    $display(" Test: operand_a = %0d, operand_b = %0d, opcode = %0d at time %0t",   operand_a, operand_b, opcode, $time);
+    iw_reg_test[write_pointer] = '{opcode, operand_a, operand_b, 64'b0}; // concatenam valorile in iw_reg_test
   endfunction: randomize_transaction
+    
 
   function void print_transaction;
     $display("Writing to register location %0d: ", write_pointer);
@@ -104,6 +140,21 @@ module instr_register_test
 
 
   function void check_result;
+    if(iw_reg_test[read_pointer].op_a == instruction_word.op_a)
+      $display("Valoarea lui op_a este stocata corect\n");
+    else
+      $display("Valoarea lui op_a NU este stocata corect\n");
+    
+    if(iw_reg_test[read_pointer].op_b == instruction_word.op_b)
+      $display("Valoarea lui op_b este stocata corect\n");
+    else
+      $display("Valoarea lui op_b NU este stocata corect\n");
+
+    if(iw_reg_test[read_pointer].opc == instruction_word.opc)
+      $display("Valoarea lui opc este stocata corect\n");
+    else
+      $display("Valoarea lui opc NU este stocata corect\n");
+    
     case (iw_reg_test[read_pointer].opc)
     ZERO: iw_reg_test[read_pointer].rez = 0;
     PASSA: iw_reg_test[read_pointer].rez = iw_reg_test[read_pointer].op_a;
@@ -121,9 +172,9 @@ module instr_register_test
     default: iw_reg_test[read_pointer].rez = 0;
     endcase
   if(iw_reg_test[read_pointer].rez == instruction_word.rez)
-    $display("Test passed\n");
+    $display("Test passed (rezultat corect)\n");
   else
-    $display("Test failed\n");
+    $display("Test failed (rezultat gresit)\n");
   endfunction: check_result
 
 
