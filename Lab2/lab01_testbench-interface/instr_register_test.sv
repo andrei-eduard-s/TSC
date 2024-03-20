@@ -25,7 +25,7 @@ module instr_register_test
   parameter read_order = 2; // 0 - incremental; 1 - random; 2 - decremental;
   parameter write_order = 2; // 0 - incremental; 1 - random; 2 - decremental;
   instruction_t  iw_reg_test [0:31];
-
+  int error_number = 0;
   int seed = 555;
 
   initial begin
@@ -84,6 +84,7 @@ module instr_register_test
     $display("\n\n***********************************************************");
     $display(    "***         THIS IS A SELF-CHECKING TESTBENCH.          ***");
     $display(    "***********************************************************");
+    final_report();
     $finish;
   end
 
@@ -142,18 +143,24 @@ module instr_register_test
   function void check_result;
     if(iw_reg_test[read_pointer].op_a == instruction_word.op_a)
       $display("Valoarea lui op_a este stocata corect\n");
-    else
+    else begin
       $display("Valoarea lui op_a NU este stocata corect\n");
+      error_number++;
+    end
     
     if(iw_reg_test[read_pointer].op_b == instruction_word.op_b)
       $display("Valoarea lui op_b este stocata corect\n");
-    else
+    else begin
       $display("Valoarea lui op_b NU este stocata corect\n");
+      error_number++;
+    end
 
     if(iw_reg_test[read_pointer].opc == instruction_word.opc)
       $display("Valoarea lui opc este stocata corect\n");
-    else
+    else begin
       $display("Valoarea lui opc NU este stocata corect\n");
+      error_number++;
+    end
     
     case (iw_reg_test[read_pointer].opc)
     ZERO: iw_reg_test[read_pointer].rez = 0;
@@ -173,9 +180,23 @@ module instr_register_test
     endcase
   if(iw_reg_test[read_pointer].rez == instruction_word.rez)
     $display("Test passed (rezultat corect)\n");
-  else
+  else begin
     $display("Test failed (rezultat gresit)\n");
+    error_number++;
+  end
   endfunction: check_result
+
+  function void final_report;
+        $display("\n***************************************************");
+        $display("***                  FINAL REPORT               ***");
+        $display("***************************************************");
+        $display("Total number of errors encountered: %0d", error_number);
+        if (error_number == 0)
+            $display("Congratulations! No errors found.");
+        else
+            $display("There were %0d errors detected.", error_number);
+        $display("*\n");
+  endfunction
 
 
 endmodule: instr_register_test
