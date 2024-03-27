@@ -5,7 +5,8 @@
 
 # Set transcript file name
 ## transcript file ../reports/regression_transcript/transcript_$1
-transcript file transcript
+# Am adaugat _$5 la numele transcriptului pentru a stii in ce caz suntem
+transcript file transcript_$5
 
 # Check if the sources must be re-compiled
 if {[file isdirectory work]} {
@@ -22,7 +23,8 @@ if {$compile_on || [batch_mode] == 0} {
 }
 
 # Load project
-  eval vsim -novopt -quiet -nocoverage +notimingchecks +nowarnTSCALE -sva top
+# Aici adaugam parametrii $1,2,3,4,5 in linia de comanda eval vsim:                                                  -Gtest_case=%6
+  eval vsim -novopt -quiet -nocoverage +notimingchecks +nowarnTSCALE -GWR_NR=$1 -GRD_NR=$2 -Gwrite_order=$3 -Gread_order=$4  -sva top
 # eval vsim -novopt -quiet -coverage +code=bcesft +notimingchecks +nowarnTSCALE -sva top
 
 # Run log/wave commands
