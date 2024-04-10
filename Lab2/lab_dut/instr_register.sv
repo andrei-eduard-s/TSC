@@ -59,6 +59,8 @@ function rezultat calcul_rezultat(opcode_t opcode, operand_t op_a, operand_t op_
     MULT: calcul_rezultat = op_a * op_b;
     DIV: calcul_rezultat = op_a / op_b;
     MOD: calcul_rezultat = op_a % op_b;
+
+    // Tema: de adaugat ridicarea la putere
     endcase
 endfunction: calcul_rezultat
 

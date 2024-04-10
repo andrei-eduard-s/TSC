@@ -24,9 +24,10 @@ module instr_register_test
   parameter RD_NR = 2; // ( WR_NR - 1 ) deoarece for-ul va porni de la valoarea 0
   parameter read_order = 2; // 0 - incremental; 1 - random; 2 - decremental;
   parameter write_order = 2; // 0 - incremental; 1 - random; 2 - decremental;
+  parameter seed_val = 801046;
   instruction_t  iw_reg_test [0:31];
   int error_number = 0;
-  int seed = 555;
+  int seed = seed_val;
 
   initial begin
     $display("\n\n***********************************************************");
@@ -38,6 +39,7 @@ module instr_register_test
     read_pointer   = 5'h1F;         // initialize read pointer
     load_en        = 1'b0;          // initialize load control line
     reset_n       <= 1'b0;          // assert reset_n (active low)
+    reset_signal();
     repeat (2) @(posedge clk) ;     // hold in reset for 2 clock cycles
     reset_n        = 1'b1;          // deassert reset_n (active low)
 
@@ -139,23 +141,27 @@ module instr_register_test
     $display("  rezultat = %0d\n", instruction_word.rez);
   endfunction: print_results
 
+  function void reset_signal;
+    foreach (iw_reg_test[i])
+          iw_reg_test[i] = '{opc:ZERO,default:0}; // reset la zero
+  endfunction: reset_signal
 
   function void check_result;
-    if(iw_reg_test[read_pointer].op_a == instruction_word.op_a)
+    if(iw_reg_test[read_pointer].op_a === instruction_word.op_a)
       $display("Valoarea lui op_a este stocata corect\n");
     else begin
       $display("Valoarea lui op_a NU este stocata corect\n");
       error_number++;
     end
     
-    if(iw_reg_test[read_pointer].op_b == instruction_word.op_b)
+    if(iw_reg_test[read_pointer].op_b === instruction_word.op_b)
       $display("Valoarea lui op_b este stocata corect\n");
     else begin
       $display("Valoarea lui op_b NU este stocata corect\n");
       error_number++;
     end
 
-    if(iw_reg_test[read_pointer].opc == instruction_word.opc)
+    if(iw_reg_test[read_pointer].opc === instruction_word.opc)
       $display("Valoarea lui opc este stocata corect\n");
     else begin
       $display("Valoarea lui opc NU este stocata corect\n");
@@ -170,7 +176,7 @@ module instr_register_test
     SUB: iw_reg_test[read_pointer].rez = iw_reg_test[read_pointer].op_a - iw_reg_test[read_pointer].op_b;
     MULT: iw_reg_test[read_pointer].rez = iw_reg_test[read_pointer].op_a * iw_reg_test[read_pointer].op_b;
     DIV: begin
-      if(iw_reg_test[read_pointer].op_b == 0)
+      if(iw_reg_test[read_pointer].op_b === 0)
         iw_reg_test[read_pointer].rez = 0;
       else
         iw_reg_test[read_pointer].rez = iw_reg_test[read_pointer].op_a / iw_reg_test[read_pointer].op_b;
@@ -178,7 +184,7 @@ module instr_register_test
     MOD: iw_reg_test[read_pointer].rez = iw_reg_test[read_pointer].op_a % iw_reg_test[read_pointer].op_b;
     default: iw_reg_test[read_pointer].rez = 0;
     endcase
-  if(iw_reg_test[read_pointer].rez == instruction_word.rez)
+  if(iw_reg_test[read_pointer].rez === instruction_word.rez)
     $display("Test passed (rezultat corect)\n");
   else begin
     $display("Test failed (rezultat gresit)\n");
