@@ -28,6 +28,7 @@ module instr_register_test
   instruction_t  iw_reg_test [0:31];
   int error_number = 0;
   int seed = seed_val;
+  parameter TEST_NAME = "test";
 
   initial begin
     $display("\n\n***********************************************************");
@@ -87,6 +88,7 @@ module instr_register_test
     $display(    "***         THIS IS A SELF-CHECKING TESTBENCH.          ***");
     $display(    "***********************************************************");
     final_report();
+    write_regression_status();
     $finish;
   end
 
@@ -102,14 +104,14 @@ module instr_register_test
     static int temp = 0;
       operand_a     = $random(seed)%16;                 // between -15 and 15
       operand_b     = $unsigned($random)%16;            // between 0 and 15
-      opcode        = opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
+      opcode        = opcode_t'($unsigned($random)%9);  // between 0 and 7, cast to opcode_t type
       write_pointer = temp++; // - incremental
     end
 
     if(write_order == 1) begin
       operand_a     = $random(seed)%16;                 // between -15 and 15
       operand_b     = $unsigned($random)%16;            // between 0 and 15
-      opcode        = opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
+      opcode        = opcode_t'($unsigned($random)%9);  // between 0 and 7, cast to opcode_t type
       write_pointer = $unsigned($random)%32; // - random
     end
 
@@ -117,7 +119,7 @@ module instr_register_test
     static int temp = 31;
       operand_a     = $random(seed)%16;                 // between -15 and 15
       operand_b     = $unsigned($random)%16;            // between 0 and 15
-      opcode        = opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
+      opcode        = opcode_t'($unsigned($random)%9);  // between 0 and 7, cast to opcode_t type
       write_pointer = temp--; // - decremental
     end
     
@@ -142,8 +144,10 @@ module instr_register_test
   endfunction: print_results
 
   function void reset_signal;
-    foreach (iw_reg_test[i])
+    foreach (iw_reg_test[i]) begin
           iw_reg_test[i] = '{opc:ZERO,default:0}; // reset la zero
+          //$display("Am resetat locatia %0d", i);
+    end
   endfunction: reset_signal
 
   function void check_result;
@@ -181,7 +185,19 @@ module instr_register_test
       else
         iw_reg_test[read_pointer].rez = iw_reg_test[read_pointer].op_a / iw_reg_test[read_pointer].op_b;
     end
-    MOD: iw_reg_test[read_pointer].rez = iw_reg_test[read_pointer].op_a % iw_reg_test[read_pointer].op_b;
+    MOD: begin
+      if(iw_reg_test[read_pointer].op_b ===0)
+        iw_reg_test[read_pointer].rez = 0;
+      else
+        iw_reg_test[read_pointer].rez = iw_reg_test[read_pointer].op_a % iw_reg_test[read_pointer].op_b;
+    end
+    POW: begin
+      if(iw_reg_test[read_pointer].op_a ===0)
+        iw_reg_test[read_pointer].rez = 0;
+      else
+        iw_reg_test[read_pointer].rez = iw_reg_test[read_pointer].op_a ** iw_reg_test[read_pointer].op_b;
+    end
+
     default: iw_reg_test[read_pointer].rez = 0;
     endcase
   if(iw_reg_test[read_pointer].rez === instruction_word.rez)
@@ -203,6 +219,18 @@ module instr_register_test
             $display("There were %0d errors detected.", error_number);
         $display("*\n");
   endfunction
+
+  function void write_regression_status;
+    int file;
+    file = $fopen("../reports/regression_transcript/regression_status.txt", "a");
+    if(error_number == 0) begin
+      $fdisplay(file, "%s : passed", TEST_NAME);
+    end
+    else begin
+      $fdisplay(file, "%s : failed",TEST_NAME);
+    end
+    $fclose(file);
+  endfunction: write_regression_status
 
 
 endmodule: instr_register_test

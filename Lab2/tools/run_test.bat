@@ -11,7 +11,7 @@ cd ../sim
 :: Parametrizam scriptul:
 :: echo %1 %2 %3 %4 %5 %6 - Afisam parametrii ; %6 - modul gui sau c
 :: vsim -gui -do "do run.do %1 %2 %3 %4 %5 %6" 
-vsim -%6 -do "do run.do %1 %2 %3 %4 %5 %6 %7" 
+vsim -%6 -do "do run.do %1 %2 %3 %4 %5 %7" 
 
 :: Iesim din directorul sim si intram iar in directorul tools
 cd ../tools

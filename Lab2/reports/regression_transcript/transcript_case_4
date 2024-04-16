@@ -1,6 +1,6 @@
 # 1
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 08:50:09 on Apr 10,2024
+# Start time: 23:07:07 on Apr 16,2024
 # vlog -sv -timescale 1ps/1ps -work work -f sources.txt 
 # -- Compiling package instr_register_pkg
 # -- Compiling module instr_register
@@ -10,10 +10,10 @@
 # 
 # Top level modules:
 # 	top
-# End time: 08:50:09 on Apr 10,2024, Elapsed time: 0:00:00
+# End time: 23:07:07 on Apr 16,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top -GWR_NR=50 -GRD_NR=32 -Gwrite_order=1 -Gseed_val=case_4 -Gread_order=1 
-# Start time: 08:50:09 on Apr 10,2024
+# vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top -GTEST_NAME=case_4 -GWR_NR=50 -GRD_NR=32 -Gwrite_order=1 -Gseed_val=735753 -Gread_order=1 
+# Start time: 23:07:07 on Apr 16,2024
 # 
 # 
 # ***********************************************************
@@ -23,313 +23,313 @@
 # Reseting the instruction register...
 # 
 # Writing values to register stack...
-#  Test: operand_a = 10, operand_b = 13, opcode = 4 at time 36
-# Writing to register location 24: 
-#   opcode = 4 (SUB)
-#   operand_a = 10
-#   operand_b = 13
+#  Test: operand_a = 9, operand_b = 11, opcode = 6 at time 36
+# Writing to register location 19: 
+#   opcode = 6 (DIV)
+#   operand_a = 9
+#   operand_b = 11
 # 
-#  Test: operand_a = 13, operand_b = 12, opcode = 0 at time 46
-# Writing to register location 25: 
+#  Test: operand_a = -5, operand_b = 8, opcode = 0 at time 46
+# Writing to register location 17: 
 #   opcode = 0 (ZERO)
-#   operand_a = 13
-#   operand_b = 12
-# 
-#  Test: operand_a = 12, operand_b = 8, opcode = 1 at time 56
-# Writing to register location 4: 
-#   opcode = 1 (PASSA)
-#   operand_a = 12
+#   operand_a = -5
 #   operand_b = 8
 # 
-#  Test: operand_a = 8, operand_b = 9, opcode = 4 at time 66
-# Writing to register location 17: 
+#  Test: operand_a = 8, operand_b = 3, opcode = 0 at time 56
+# Writing to register location 21: 
+#   opcode = 0 (ZERO)
+#   operand_a = 8
+#   operand_b = 3
+# 
+#  Test: operand_a = 3, operand_b = 1, opcode = 0 at time 66
+# Writing to register location 18: 
+#   opcode = 0 (ZERO)
+#   operand_a = 3
+#   operand_b = 1
+# 
+#  Test: operand_a = -15, operand_b = 5, opcode = 0 at time 76
+# Writing to register location 15: 
+#   opcode = 0 (ZERO)
+#   operand_a = -15
+#   operand_b = 5
+# 
+#  Test: operand_a = -11, operand_b = 2, opcode = 3 at time 86
+# Writing to register location 29: 
+#   opcode = 3 (ADD)
+#   operand_a = -11
+#   operand_b = 2
+# 
+#  Test: operand_a = 2, operand_b = 15, opcode = 0 at time 96
+# Writing to register location 8: 
+#   opcode = 0 (ZERO)
+#   operand_a = 2
+#   operand_b = 15
+# 
+#  Test: operand_a = 15, operand_b = 13, opcode = 5 at time 106
+# Writing to register location 25: 
+#   opcode = 5 (MULT)
+#   operand_a = 15
+#   operand_b = 13
+# 
+#  Test: operand_a = -3, operand_b = 8, opcode = 4 at time 116
+# Writing to register location 7: 
 #   opcode = 4 (SUB)
+#   operand_a = -3
+#   operand_b = 8
+# 
+#  Test: operand_a = 8, operand_b = 9, opcode = 2 at time 126
+# Writing to register location 14: 
+#   opcode = 2 (PASSB)
 #   operand_a = 8
 #   operand_b = 9
 # 
-#  Test: operand_a = 9, operand_b = 4, opcode = 1 at time 76
-# Writing to register location 2: 
-#   opcode = 1 (PASSA)
-#   operand_a = 9
-#   operand_b = 4
-# 
-#  Test: operand_a = -12, operand_b = 1, opcode = 2 at time 86
+#  Test: operand_a = 9, operand_b = 7, opcode = 8 at time 136
 # Writing to register location 13: 
-#   opcode = 2 (PASSB)
-#   operand_a = -12
-#   operand_b = 1
+#   opcode = 8 (POW)
+#   operand_a = 9
+#   operand_b = 7
 # 
-#  Test: operand_a = -15, operand_b = 2, opcode = 5 at time 96
-# Writing to register location 9: 
-#   opcode = 5 (MULT)
-#   operand_a = -15
-#   operand_b = 2
+#  Test: operand_a = 7, operand_b = 14, opcode = 4 at time 146
+# Writing to register location 22: 
+#   opcode = 4 (SUB)
+#   operand_a = 7
+#   operand_b = 14
 # 
-#  Test: operand_a = -14, operand_b = 13, opcode = 1 at time 106
-# Writing to register location 17: 
-#   opcode = 1 (PASSA)
-#   operand_a = -14
+#  Test: operand_a = 14, operand_b = 13, opcode = 8 at time 156
+# Writing to register location 23: 
+#   opcode = 8 (POW)
+#   operand_a = 14
 #   operand_b = 13
 # 
-#  Test: operand_a = 13, operand_b = 9, opcode = 1 at time 116
+#  Test: operand_a = 13, operand_b = 6, opcode = 0 at time 166
 # Writing to register location 19: 
-#   opcode = 1 (PASSA)
+#   opcode = 0 (ZERO)
 #   operand_a = 13
-#   operand_b = 9
-# 
-#  Test: operand_a = 9, operand_b = 1, opcode = 3 at time 126
-# Writing to register location 19: 
-#   opcode = 3 (ADD)
-#   operand_a = 9
-#   operand_b = 1
-# 
-#  Test: operand_a = 1, operand_b = 3, opcode = 3 at time 136
-# Writing to register location 6: 
-#   opcode = 3 (ADD)
-#   operand_a = 1
-#   operand_b = 3
-# 
-#  Test: operand_a = -13, operand_b = 3, opcode = 6 at time 146
-# Writing to register location 31: 
-#   opcode = 6 (DIV)
-#   operand_a = -13
-#   operand_b = 3
-# 
-#  Test: operand_a = -13, operand_b = 6, opcode = 7 at time 156
-# Writing to register location 4: 
-#   opcode = 7 (MOD)
-#   operand_a = -13
 #   operand_b = 6
 # 
-#  Test: operand_a = 6, operand_b = 15, opcode = 4 at time 166
-# Writing to register location 19: 
-#   opcode = 4 (SUB)
-#   operand_a = 6
-#   operand_b = 15
-# 
-#  Test: operand_a = -1, operand_b = 4, opcode = 3 at time 176
-# Writing to register location 29: 
+#  Test: operand_a = -10, operand_b = 7, opcode = 3 at time 176
+# Writing to register location 16: 
 #   opcode = 3 (ADD)
-#   operand_a = -1
-#   operand_b = 4
+#   operand_a = -10
+#   operand_b = 7
 # 
-#  Test: operand_a = -12, operand_b = 3, opcode = 5 at time 186
-# Writing to register location 15: 
-#   opcode = 5 (MULT)
-#   operand_a = -12
+#  Test: operand_a = 7, operand_b = 3, opcode = 1 at time 186
+# Writing to register location 11: 
+#   opcode = 1 (PASSA)
+#   operand_a = 7
 #   operand_b = 3
 # 
-#  Test: operand_a = 3, operand_b = 13, opcode = 7 at time 196
-# Writing to register location 2: 
+#  Test: operand_a = 3, operand_b = 0, opcode = 4 at time 196
+# Writing to register location 4: 
+#   opcode = 4 (SUB)
+#   operand_a = 3
+#   operand_b = 0
+# 
+#  Test: operand_a = 0, operand_b = 11, opcode = 0 at time 206
+# Writing to register location 7: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 11
+# 
+#  Test: operand_a = -5, operand_b = 4, opcode = 7 at time 216
+# Writing to register location 10: 
+#   opcode = 7 (MOD)
+#   operand_a = -5
+#   operand_b = 4
+# 
+#  Test: operand_a = -12, operand_b = 7, opcode = 6 at time 226
+# Writing to register location 26: 
+#   opcode = 6 (DIV)
+#   operand_a = -12
+#   operand_b = 7
+# 
+#  Test: operand_a = -9, operand_b = 10, opcode = 6 at time 236
+# Writing to register location 25: 
+#   opcode = 6 (DIV)
+#   operand_a = -9
+#   operand_b = 10
+# 
+#  Test: operand_a = 10, operand_b = 10, opcode = 8 at time 246
+# Writing to register location 3: 
+#   opcode = 8 (POW)
+#   operand_a = 10
+#   operand_b = 10
+# 
+#  Test: operand_a = 10, operand_b = 9, opcode = 6 at time 256
+# Writing to register location 11: 
+#   opcode = 6 (DIV)
+#   operand_a = 10
+#   operand_b = 9
+# 
+#  Test: operand_a = 9, operand_b = 3, opcode = 6 at time 266
+# Writing to register location 3: 
+#   opcode = 6 (DIV)
+#   operand_a = 9
+#   operand_b = 3
+# 
+#  Test: operand_a = 3, operand_b = 11, opcode = 2 at time 276
+# Writing to register location 21: 
+#   opcode = 2 (PASSB)
+#   operand_a = 3
+#   operand_b = 11
+# 
+#  Test: operand_a = 11, operand_b = 3, opcode = 3 at time 286
+# Writing to register location 24: 
+#   opcode = 3 (ADD)
+#   operand_a = 11
+#   operand_b = 3
+# 
+#  Test: operand_a = 3, operand_b = 5, opcode = 7 at time 296
+# Writing to register location 19: 
 #   opcode = 7 (MOD)
 #   operand_a = 3
+#   operand_b = 5
+# 
+#  Test: operand_a = 5, operand_b = 8, opcode = 5 at time 306
+# Writing to register location 20: 
+#   opcode = 5 (MULT)
+#   operand_a = 5
+#   operand_b = 8
+# 
+#  Test: operand_a = -8, operand_b = 3, opcode = 2 at time 316
+# Writing to register location 28: 
+#   opcode = 2 (PASSB)
+#   operand_a = -8
+#   operand_b = 3
+# 
+#  Test: operand_a = 3, operand_b = 4, opcode = 6 at time 326
+# Writing to register location 10: 
+#   opcode = 6 (DIV)
+#   operand_a = 3
+#   operand_b = 4
+# 
+#  Test: operand_a = 4, operand_b = 12, opcode = 3 at time 336
+# Writing to register location 17: 
+#   opcode = 3 (ADD)
+#   operand_a = 4
+#   operand_b = 12
+# 
+#  Test: operand_a = -4, operand_b = 10, opcode = 3 at time 346
+# Writing to register location 5: 
+#   opcode = 3 (ADD)
+#   operand_a = -4
+#   operand_b = 10
+# 
+#  Test: operand_a = -6, operand_b = 1, opcode = 7 at time 356
+# Writing to register location 12: 
+#   opcode = 7 (MOD)
+#   operand_a = -6
+#   operand_b = 1
+# 
+#  Test: operand_a = -15, operand_b = 5, opcode = 3 at time 366
+# Writing to register location 8: 
+#   opcode = 3 (ADD)
+#   operand_a = -15
+#   operand_b = 5
+# 
+#  Test: operand_a = 5, operand_b = 12, opcode = 7 at time 376
+# Writing to register location 20: 
+#   opcode = 7 (MOD)
+#   operand_a = 5
+#   operand_b = 12
+# 
+#  Test: operand_a = 12, operand_b = 8, opcode = 8 at time 386
+# Writing to register location 27: 
+#   opcode = 8 (POW)
+#   operand_a = 12
+#   operand_b = 8
+# 
+#  Test: operand_a = -8, operand_b = 4, opcode = 6 at time 396
+# Writing to register location 3: 
+#   opcode = 6 (DIV)
+#   operand_a = -8
+#   operand_b = 4
+# 
+#  Test: operand_a = 4, operand_b = 11, opcode = 6 at time 406
+# Writing to register location 16: 
+#   opcode = 6 (DIV)
+#   operand_a = 4
+#   operand_b = 11
+# 
+#  Test: operand_a = 11, operand_b = 3, opcode = 6 at time 416
+# Writing to register location 1: 
+#   opcode = 6 (DIV)
+#   operand_a = 11
+#   operand_b = 3
+# 
+#  Test: operand_a = 3, operand_b = 0, opcode = 0 at time 426
+# Writing to register location 13: 
+#   opcode = 0 (ZERO)
+#   operand_a = 3
+#   operand_b = 0
+# 
+#  Test: operand_a = 0, operand_b = 1, opcode = 8 at time 436
+# Writing to register location 29: 
+#   opcode = 8 (POW)
+#   operand_a = 0
+#   operand_b = 1
+# 
+#  Test: operand_a = -15, operand_b = 13, opcode = 2 at time 446
+# Writing to register location 31: 
+#   opcode = 2 (PASSB)
+#   operand_a = -15
 #   operand_b = 13
 # 
-#  Test: operand_a = -3, operand_b = 15, opcode = 2 at time 206
-# Writing to register location 20: 
-#   opcode = 2 (PASSB)
+#  Test: operand_a = 13, operand_b = 13, opcode = 3 at time 456
+# Writing to register location 25: 
+#   opcode = 3 (ADD)
+#   operand_a = 13
+#   operand_b = 13
+# 
+#  Test: operand_a = -3, operand_b = 15, opcode = 0 at time 466
+# Writing to register location 18: 
+#   opcode = 0 (ZERO)
 #   operand_a = -3
 #   operand_b = 15
 # 
-#  Test: operand_a = -1, operand_b = 2, opcode = 4 at time 216
-# Writing to register location 28: 
-#   opcode = 4 (SUB)
+#  Test: operand_a = -1, operand_b = 9, opcode = 0 at time 476
+# Writing to register location 20: 
+#   opcode = 0 (ZERO)
 #   operand_a = -1
+#   operand_b = 9
+# 
+#  Test: operand_a = -7, operand_b = 2, opcode = 6 at time 486
+# Writing to register location 8: 
+#   opcode = 6 (DIV)
+#   operand_a = -7
 #   operand_b = 2
 # 
-#  Test: operand_a = 2, operand_b = 4, opcode = 4 at time 226
-# Writing to register location 24: 
-#   opcode = 4 (SUB)
+#  Test: operand_a = 2, operand_b = 4, opcode = 7 at time 496
+# Writing to register location 7: 
+#   opcode = 7 (MOD)
 #   operand_a = 2
 #   operand_b = 4
 # 
-#  Test: operand_a = -12, operand_b = 12, opcode = 0 at time 236
-# Writing to register location 6: 
-#   opcode = 0 (ZERO)
-#   operand_a = -12
-#   operand_b = 12
-# 
-#  Test: operand_a = -4, operand_b = 8, opcode = 6 at time 246
-# Writing to register location 28: 
-#   opcode = 6 (DIV)
-#   operand_a = -4
-#   operand_b = 8
-# 
-#  Test: operand_a = -8, operand_b = 6, opcode = 4 at time 256
-# Writing to register location 22: 
-#   opcode = 4 (SUB)
-#   operand_a = -8
-#   operand_b = 6
-# 
-#  Test: operand_a = 6, operand_b = 12, opcode = 6 at time 266
-# Writing to register location 21: 
-#   opcode = 6 (DIV)
-#   operand_a = 6
-#   operand_b = 12
-# 
-#  Test: operand_a = 12, operand_b = 6, opcode = 5 at time 276
-# Writing to register location 27: 
-#   opcode = 5 (MULT)
-#   operand_a = 12
-#   operand_b = 6
-# 
-#  Test: operand_a = 6, operand_b = 5, opcode = 3 at time 286
-# Writing to register location 3: 
-#   opcode = 3 (ADD)
-#   operand_a = 6
-#   operand_b = 5
-# 
-#  Test: operand_a = 5, operand_b = 11, opcode = 3 at time 296
-# Writing to register location 16: 
-#   opcode = 3 (ADD)
-#   operand_a = 5
-#   operand_b = 11
-# 
-#  Test: operand_a = -5, operand_b = 3, opcode = 0 at time 306
-# Writing to register location 9: 
-#   opcode = 0 (ZERO)
-#   operand_a = -5
-#   operand_b = 3
-# 
-#  Test: operand_a = 3, operand_b = 0, opcode = 1 at time 316
-# Writing to register location 22: 
-#   opcode = 1 (PASSA)
-#   operand_a = 3
-#   operand_b = 0
-# 
-#  Test: operand_a = 0, operand_b = 9, opcode = 6 at time 326
-# Writing to register location 21: 
-#   opcode = 6 (DIV)
-#   operand_a = 0
-#   operand_b = 9
-# 
-#  Test: operand_a = -7, operand_b = 6, opcode = 5 at time 336
-# Writing to register location 21: 
-#   opcode = 5 (MULT)
-#   operand_a = -7
-#   operand_b = 6
-# 
-#  Test: operand_a = 6, operand_b = 5, opcode = 5 at time 346
-# Writing to register location 1: 
-#   opcode = 5 (MULT)
-#   operand_a = 6
-#   operand_b = 5
-# 
-#  Test: operand_a = 5, operand_b = 5, opcode = 1 at time 356
+#  Test: operand_a = -12, operand_b = 8, opcode = 6 at time 506
 # Writing to register location 12: 
-#   opcode = 1 (PASSA)
-#   operand_a = 5
-#   operand_b = 5
-# 
-#  Test: operand_a = -11, operand_b = 1, opcode = 4 at time 366
-# Writing to register location 26: 
-#   opcode = 4 (SUB)
-#   operand_a = -11
-#   operand_b = 1
-# 
-#  Test: operand_a = 1, operand_b = 12, opcode = 2 at time 376
-# Writing to register location 15: 
-#   opcode = 2 (PASSB)
-#   operand_a = 1
-#   operand_b = 12
-# 
-#  Test: operand_a = 12, operand_b = 10, opcode = 7 at time 386
-# Writing to register location 0: 
-#   opcode = 7 (MOD)
-#   operand_a = 12
-#   operand_b = 10
-# 
-#  Test: operand_a = 10, operand_b = 15, opcode = 0 at time 396
-# Writing to register location 18: 
-#   opcode = 0 (ZERO)
-#   operand_a = 10
-#   operand_b = 15
-# 
-#  Test: operand_a = -1, operand_b = 0, opcode = 2 at time 406
-# Writing to register location 6: 
-#   opcode = 2 (PASSB)
-#   operand_a = -1
-#   operand_b = 0
-# 
-#  Test: operand_a = 0, operand_b = 2, opcode = 6 at time 416
-# Writing to register location 18: 
 #   opcode = 6 (DIV)
-#   operand_a = 0
-#   operand_b = 2
+#   operand_a = -12
+#   operand_b = 8
 # 
-#  Test: operand_a = -14, operand_b = 6, opcode = 2 at time 426
-# Writing to register location 8: 
-#   opcode = 2 (PASSB)
-#   operand_a = -14
-#   operand_b = 6
-# 
-#  Test: operand_a = -10, operand_b = 2, opcode = 0 at time 436
-# Writing to register location 5: 
-#   opcode = 0 (ZERO)
-#   operand_a = -10
-#   operand_b = 2
-# 
-#  Test: operand_a = -14, operand_b = 8, opcode = 5 at time 446
-# Writing to register location 17: 
+#  Test: operand_a = 8, operand_b = 7, opcode = 5 at time 516
+# Writing to register location 0: 
 #   opcode = 5 (MULT)
-#   operand_a = -14
-#   operand_b = 8
-# 
-#  Test: operand_a = 8, operand_b = 5, opcode = 1 at time 456
-# Writing to register location 8: 
-#   opcode = 1 (PASSA)
 #   operand_a = 8
-#   operand_b = 5
+#   operand_b = 7
 # 
-#  Test: operand_a = 5, operand_b = 1, opcode = 0 at time 466
-# Writing to register location 15: 
-#   opcode = 0 (ZERO)
-#   operand_a = 5
-#   operand_b = 1
-# 
-#  Test: operand_a = 1, operand_b = 8, opcode = 7 at time 476
-# Writing to register location 8: 
-#   opcode = 7 (MOD)
-#   operand_a = 1
-#   operand_b = 8
-# 
-#  Test: operand_a = -8, operand_b = 15, opcode = 0 at time 486
-# Writing to register location 18: 
-#   opcode = 0 (ZERO)
-#   operand_a = -8
-#   operand_b = 15
-# 
-#  Test: operand_a = 15, operand_b = 8, opcode = 2 at time 496
-# Writing to register location 15: 
-#   opcode = 2 (PASSB)
-#   operand_a = 15
-#   operand_b = 8
-# 
-#  Test: operand_a = -8, operand_b = 2, opcode = 7 at time 506
-# Writing to register location 11: 
-#   opcode = 7 (MOD)
-#   operand_a = -8
-#   operand_b = 2
-# 
-#  Test: operand_a = 2, operand_b = 15, opcode = 3 at time 516
-# Writing to register location 3: 
+#  Test: operand_a = 7, operand_b = 12, opcode = 3 at time 526
+# Writing to register location 22: 
 #   opcode = 3 (ADD)
-#   operand_a = 2
-#   operand_b = 15
-# 
-#  Test: operand_a = -1, operand_b = 11, opcode = 3 at time 526
-# Writing to register location 13: 
-#   opcode = 3 (ADD)
-#   operand_a = -1
-#   operand_b = 11
+#   operand_a = 7
+#   operand_b = 12
 # 
 # 
 # Reading back the same register locations written...
-# Read from register location 19: 
-#   opcode = 4 (SUB)
-#   operand_a = 6
-#   operand_b = 15
-#   rezultat = -9
+# Read from register location 2: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+#   rezultat = 0
 # 
 # Valoarea lui op_a este stocata corect
 # 
@@ -339,11 +339,109 @@
 # 
 # Test passed (rezultat corect)
 # 
-# Read from register location 22: 
-#   opcode = 1 (PASSA)
+# Read from register location 14: 
+#   opcode = 2 (PASSB)
+#   operand_a = 8
+#   operand_b = 9
+#   rezultat = 9
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 15: 
+#   opcode = 0 (ZERO)
+#   operand_a = -15
+#   operand_b = 5
+#   rezultat = 0
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 20: 
+#   opcode = 0 (ZERO)
+#   operand_a = -1
+#   operand_b = 9
+#   rezultat = 0
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 6: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+#   rezultat = 0
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 3: 
+#   opcode = 6 (DIV)
+#   operand_a = -8
+#   operand_b = 4
+#   rezultat = -2
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 13: 
+#   opcode = 0 (ZERO)
 #   operand_a = 3
 #   operand_b = 0
-#   rezultat = 3
+#   rezultat = 0
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 11: 
+#   opcode = 6 (DIV)
+#   operand_a = 10
+#   operand_b = 9
+#   rezultat = 1
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 27: 
+#   opcode = 8 (POW)
+#   operand_a = 12
+#   operand_b = 8
+#   rezultat = 429981696
 # 
 # Valoarea lui op_a este stocata corect
 # 
@@ -355,8 +453,204 @@
 # 
 # Read from register location 9: 
 #   opcode = 0 (ZERO)
-#   operand_a = -5
+#   operand_a = 0
+#   operand_b = 0
+#   rezultat = 0
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 20: 
+#   opcode = 0 (ZERO)
+#   operand_a = -1
+#   operand_b = 9
+#   rezultat = 0
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 13: 
+#   opcode = 0 (ZERO)
+#   operand_a = 3
+#   operand_b = 0
+#   rezultat = 0
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 25: 
+#   opcode = 3 (ADD)
+#   operand_a = 13
+#   operand_b = 13
+#   rezultat = 26
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 29: 
+#   opcode = 8 (POW)
+#   operand_a = 0
+#   operand_b = 1
+#   rezultat = 0
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 28: 
+#   opcode = 2 (PASSB)
+#   operand_a = -8
 #   operand_b = 3
+#   rezultat = 3
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 21: 
+#   opcode = 2 (PASSB)
+#   operand_a = 3
+#   operand_b = 11
+#   rezultat = 11
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 19: 
+#   opcode = 7 (MOD)
+#   operand_a = 3
+#   operand_b = 5
+#   rezultat = 3
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 6: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+#   rezultat = 0
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 28: 
+#   opcode = 2 (PASSB)
+#   operand_a = -8
+#   operand_b = 3
+#   rezultat = 3
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 28: 
+#   opcode = 2 (PASSB)
+#   operand_a = -8
+#   operand_b = 3
+#   rezultat = 3
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 2: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+#   rezultat = 0
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 9: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+#   rezultat = 0
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 6: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+#   rezultat = 0
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 20: 
+#   opcode = 0 (ZERO)
+#   operand_a = -1
+#   operand_b = 9
 #   rezultat = 0
 # 
 # Valoarea lui op_a este stocata corect
@@ -368,374 +662,10 @@
 # Test passed (rezultat corect)
 # 
 # Read from register location 21: 
-#   opcode = 5 (MULT)
-#   operand_a = -7
-#   operand_b = 6
-#   rezultat = -42
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 11: 
-#   opcode = 7 (MOD)
-#   operand_a = -8
-#   operand_b = 2
-#   rezultat = 0
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 18: 
-#   opcode = 0 (ZERO)
-#   operand_a = -8
-#   operand_b = 15
-#   rezultat = 0
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 31: 
-#   opcode = 6 (DIV)
-#   operand_a = -13
-#   operand_b = 3
-#   rezultat = -4
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 16: 
-#   opcode = 3 (ADD)
-#   operand_a = 5
+#   opcode = 2 (PASSB)
+#   operand_a = 3
 #   operand_b = 11
-#   rezultat = 16
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 20: 
-#   opcode = 2 (PASSB)
-#   operand_a = -3
-#   operand_b = 15
-#   rezultat = 15
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 6: 
-#   opcode = 2 (PASSB)
-#   operand_a = -1
-#   operand_b = 0
-#   rezultat = 0
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 12: 
-#   opcode = 1 (PASSA)
-#   operand_a = 5
-#   operand_b = 5
-#   rezultat = 5
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 3: 
-#   opcode = 3 (ADD)
-#   operand_a = 2
-#   operand_b = 15
-#   rezultat = 17
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 20: 
-#   opcode = 2 (PASSB)
-#   operand_a = -3
-#   operand_b = 15
-#   rezultat = 15
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 29: 
-#   opcode = 3 (ADD)
-#   operand_a = -1
-#   operand_b = 4
-#   rezultat = 3
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 18: 
-#   opcode = 0 (ZERO)
-#   operand_a = -8
-#   operand_b = 15
-#   rezultat = 0
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 10: 
-#   opcode = 0 (ZERO)
-#   operand_a = 0
-#   operand_b = 0
-#   rezultat = 0
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 27: 
-#   opcode = 5 (MULT)
-#   operand_a = 12
-#   operand_b = 6
-#   rezultat = 72
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 14: 
-#   opcode = 0 (ZERO)
-#   operand_a = 0
-#   operand_b = 0
-#   rezultat = 0
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 3: 
-#   opcode = 3 (ADD)
-#   operand_a = 2
-#   operand_b = 15
-#   rezultat = 17
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 9: 
-#   opcode = 0 (ZERO)
-#   operand_a = -5
-#   operand_b = 3
-#   rezultat = 0
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 29: 
-#   opcode = 3 (ADD)
-#   operand_a = -1
-#   operand_b = 4
-#   rezultat = 3
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 0: 
-#   opcode = 7 (MOD)
-#   operand_a = 12
-#   operand_b = 10
-#   rezultat = 2
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 7: 
-#   opcode = 0 (ZERO)
-#   operand_a = 0
-#   operand_b = 0
-#   rezultat = 0
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 3: 
-#   opcode = 3 (ADD)
-#   operand_a = 2
-#   operand_b = 15
-#   rezultat = 17
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 8: 
-#   opcode = 7 (MOD)
-#   operand_a = 1
-#   operand_b = 8
-#   rezultat = 1
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 29: 
-#   opcode = 3 (ADD)
-#   operand_a = -1
-#   operand_b = 4
-#   rezultat = 3
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 25: 
-#   opcode = 0 (ZERO)
-#   operand_a = 13
-#   operand_b = 12
-#   rezultat = 0
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 10: 
-#   opcode = 0 (ZERO)
-#   operand_a = 0
-#   operand_b = 0
-#   rezultat = 0
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 15: 
-#   opcode = 2 (PASSB)
-#   operand_a = 15
-#   operand_b = 8
-#   rezultat = 8
-# 
-# Valoarea lui op_a este stocata corect
-# 
-# Valoarea lui op_b este stocata corect
-# 
-# Valoarea lui opc este stocata corect
-# 
-# Test passed (rezultat corect)
-# 
-# Read from register location 23: 
-#   opcode = 0 (ZERO)
-#   operand_a = 0
-#   operand_b = 0
-#   rezultat = 0
+#   rezultat = 11
 # 
 # Valoarea lui op_a este stocata corect
 # 
@@ -746,10 +676,10 @@
 # Test passed (rezultat corect)
 # 
 # Read from register location 1: 
-#   opcode = 5 (MULT)
-#   operand_a = 6
-#   operand_b = 5
-#   rezultat = 30
+#   opcode = 6 (DIV)
+#   operand_a = 11
+#   operand_b = 3
+#   rezultat = 3
 # 
 # Valoarea lui op_a este stocata corect
 # 
@@ -759,11 +689,11 @@
 # 
 # Test passed (rezultat corect)
 # 
-# Read from register location 15: 
+# Read from register location 31: 
 #   opcode = 2 (PASSB)
-#   operand_a = 15
-#   operand_b = 8
-#   rezultat = 8
+#   operand_a = -15
+#   operand_b = 13
+#   rezultat = 13
 # 
 # Valoarea lui op_a este stocata corect
 # 
@@ -773,11 +703,81 @@
 # 
 # Test passed (rezultat corect)
 # 
-# Read from register location 15: 
-#   opcode = 2 (PASSB)
-#   operand_a = 15
+# Read from register location 6: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+#   rezultat = 0
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 10: 
+#   opcode = 6 (DIV)
+#   operand_a = 3
+#   operand_b = 4
+#   rezultat = 0
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 25: 
+#   opcode = 3 (ADD)
+#   operand_a = 13
+#   operand_b = 13
+#   rezultat = 26
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 2: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+#   rezultat = 0
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 8: 
+#   opcode = 6 (DIV)
+#   operand_a = -7
+#   operand_b = 2
+#   rezultat = -3
+# 
+# Valoarea lui op_a este stocata corect
+# 
+# Valoarea lui op_b este stocata corect
+# 
+# Valoarea lui opc este stocata corect
+# 
+# Test passed (rezultat corect)
+# 
+# Read from register location 27: 
+#   opcode = 8 (POW)
+#   operand_a = 12
 #   operand_b = 8
-#   rezultat = 8
+#   rezultat = 429981696
 # 
 # Valoarea lui op_a este stocata corect
 # 
@@ -800,7 +800,7 @@
 # Congratulations! No errors found.
 # *
 # 
-# ** Note: $finish    : ../lab01_testbench-interface/instr_register_test.sv(90)
+# ** Note: $finish    : ../lab01_testbench-interface/instr_register_test.sv(92)
 #    Time: 876 ns  Iteration: 1  Instance: /top/test
-# End time: 08:50:10 on Apr 10,2024, Elapsed time: 0:00:01
+# End time: 23:07:08 on Apr 16,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
